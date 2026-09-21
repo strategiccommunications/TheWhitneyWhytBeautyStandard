@@ -8,15 +8,14 @@
 <body>
 <x-dc>
 <helmet>
-<style>@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(fonts/bodoni-moda-latin-400-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(fonts/bodoni-moda-latin-400-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:400;src:url(fonts/instrument-sans-latin-400-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(fonts/bodoni-moda-latin-500-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:500;src:url(fonts/bodoni-moda-latin-500-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:500;src:url(fonts/instrument-sans-latin-500-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(fonts/bodoni-moda-latin-600-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:600;src:url(fonts/bodoni-moda-latin-600-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:600;src:url(fonts/instrument-sans-latin-600-normal.woff2)}
+<style>
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-400-italic.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-600-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:400;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:500;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-500-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:600;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-600-normal.woff2)}
 </style>
 <style>
 body{margin:0;background:#F8F0E9}
@@ -44,7 +43,7 @@ a{text-decoration:none;color:inherit}
 <div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#F8F0E9;color:#2A1420;font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.45">
 <div style="position:absolute;right:-70px;bottom:-90px;z-index:0"><svg width="320" height="320" viewBox="0 0 320 320" style="display:block"><circle cx="160.0" cy="160.0" r="158.5" fill="none" stroke="rgba(176,73,58,0.16)" stroke-width="1.5" opacity="1"/></svg></div><div style="position:absolute;right:10px;bottom:-30px;z-index:0"><svg width="180" height="180" viewBox="0 0 180 180" style="display:block"><circle cx="90.0" cy="90.0" r="88.5" fill="none" stroke="rgba(168,122,46,0.22)" stroke-width="1.5" opacity="1"/></svg></div>
 <div style="position:absolute;inset:0;padding:44px 72px 0;box-sizing:border-box;z-index:1">
-<div style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#B0493A;line-height:1.2">Optional &middot; Q1 budget (&#8358;500,000) &mdash; indicative</div><h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:48px;line-height:1.08;letter-spacing:-0.01em;max-width:900px;margin-top:14px;color:#2A1420">Where the money <em style='color:#B0493A;font-weight:400'>goes</em></h1><div style="display:flex;gap:56px;margin-top:22px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#B0493A;line-height:1.2">Optional &middot; Q1 budget allocation &mdash; indicative</div><h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:48px;line-height:1.08;letter-spacing:-0.01em;max-width:900px;margin-top:14px;color:#2A1420">Where the budget <em style='color:#B0493A;font-weight:400'>goes</em></h1><div style="display:flex;gap:56px;margin-top:22px">
 <div style="flex:1;min-width:0">
 <div style="display:flex;gap:14px;align-items:flex-end;height:330px;border-bottom:1.5px solid #2A1420">
 <sc-for list="{{bars}}" as="b" hint-placeholder-count="6">
@@ -53,7 +52,7 @@ a{text-decoration:none;color:inherit}
 <sc-for list="{{bars}}" as="b" hint-placeholder-count="6"><div style="flex:1;min-width:0;font-size:13px;line-height:1.25;font-weight:600;text-align:center;color:#6A5360">{{b.name}}</div></sc-for></div></div>
 <div style="width:340px;flex:none;padding:24px 26px;border-radius:10px;background:#2A1420;color:#F8F0E9;height:330px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between">
 <div style="font-size:12px;letter-spacing:.2em;font-weight:600;color:#F2A99A">SELECTED</div>
-<div><div style="font-family:'Bodoni Moda',serif;font-size:74px;line-height:.95">{{sel.pct}}</div><div style="font-family:'Bodoni Moda',serif;font-size:27px;margin-top:6px">{{sel.name}}</div><div style="font-size:20px;margin-top:10px;color:#DDB877">{{sel.naira}}</div></div></div></div>
+<div><div style="font-family:'Bodoni Moda',serif;font-size:74px;line-height:.95">{{sel.pct}}</div><div style="font-family:'Bodoni Moda',serif;font-size:27px;margin-top:6px">{{sel.name}}</div><div style="font-size:15.5px;margin-top:10px;line-height:1.4;color:#DDB877">{{sel.note}}</div></div></div></div>
 <p style="margin-top:20px;font-size:16.5px;line-height:1.5;max-width:1000px;color:#6A5360">Weighted toward content and paid media because founder content is already proven to earn reach &mdash; the budget&rsquo;s job is converting that reach, not chasing more of it.</p>
 </div>
 <div style="position:absolute;left:72px;right:72px;bottom:22px;display:flex;align-items:center;justify-content:space-between;z-index:2">
@@ -69,10 +68,9 @@ class Component extends DCLogic {
 constructor(...a) { super(...a); this.state = {sel:0}; }
 renderVals() {
 const s = this.state; const set = (o) => this.setState(o);
-const B=[["Content production",30],["Paid media",20],["Influencers/creators",18],["PR/media outreach",14],["Events/activation",10],["Tools & contingency",8]];
-const fmt=(p)=>"₦"+(p*5000).toLocaleString("en-NG");
+const B=[["Content production",30,"Largest share — the batch shoot day, edits and the founder content pipeline"],["Paid media",20,"Retargeting and lookalike ads against the KPIs already defined"],["Influencers/creators",18,"3–5 micro-creators documenting their own visit and reveal"],["PR/media outreach",14,"Pitching, press kit and placements across the media targets"],["Events/activation",10,"In-salon activation moments and launch-adjacent touchpoints"],["Tools & contingency",8,"Booking, tracking and reporting tools plus a buffer"]];
 const cols=["#2A1420","#C9705F","#8C3B4E","#DDB877","#E9B5A6","#B7A0A6"];
-return {bars:B.map((b,i)=>{const on=s.sel===i;return {name:b[0],pct:b[1]+"%",h:b[1]*10.5,on:on,aria:b[0]+" "+b[1]+" percent",bg:on?"#B0493A":cols[i],fg:(i===0||i===1||i===2||on)?"#F8F0E9":"#2A1420",fs:on?30:24,pick:()=>set({sel:i})};}),sel:{pct:B[s.sel][1]+"%",name:B[s.sel][0],naira:fmt(B[s.sel][1])}};
+return {bars:B.map((b,i)=>{const on=s.sel===i;return {name:b[0],pct:b[1]+"%",h:b[1]*10.5,on:on,aria:b[0]+" "+b[1]+" percent",bg:on?"#B0493A":cols[i],fg:(i===0||i===1||i===2||on)?"#F8F0E9":"#2A1420",fs:on?30:24,pick:()=>set({sel:i})};}),sel:{pct:B[s.sel][1]+"%",name:B[s.sel][0],note:B[s.sel][2]}};
 }
 }
 </script>

@@ -8,15 +8,14 @@
 <body>
 <x-dc>
 <helmet>
-<style>@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(fonts/bodoni-moda-latin-400-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(fonts/bodoni-moda-latin-400-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:400;src:url(fonts/instrument-sans-latin-400-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(fonts/bodoni-moda-latin-500-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:500;src:url(fonts/bodoni-moda-latin-500-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:500;src:url(fonts/instrument-sans-latin-500-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(fonts/bodoni-moda-latin-600-normal.woff2)}
-@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:600;src:url(fonts/bodoni-moda-latin-600-italic.woff2)}
-@font-face{font-family:'Instrument Sans';font-weight:600;src:url(fonts/instrument-sans-latin-600-normal.woff2)}
+<style>
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-400-italic.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(../node_modules/@fontsource/bodoni-moda/files/bodoni-moda-latin-600-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:400;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-400-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:500;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-500-normal.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:600;src:url(../node_modules/@fontsource/instrument-sans/files/instrument-sans-latin-600-normal.woff2)}
 </style>
 <style>
 body{margin:0;background:#F8F0E9}
@@ -71,7 +70,7 @@ constructor(...a) { super(...a); this.state = {sel:0}; }
 renderVals() {
 const s = this.state; const set = (o) => this.setState(o);
 const D=[["01","Plan","Parts 01 – 02",[0,1]],["02","Execute","Parts 03 – 06",[2,3,4,5]],["03","Measure","Part 07",[6]],["04","Optimise","Parts 08 – 10",[7,8,9]]];
-const T=["Brand & business diagnosis, audience segments","Founder-led brand strategy for Whitney","90-day roadmap: Build, Grow, Scale","Content direction & the flagship Q1 campaign","PR strategy: angles, media, founder visibility","Digital growth funnel & conversion mapping","Q1 KPI framework — vanity vs. business metrics","Month 1 results: reporting & diagnostic analysis","Execution test: three real creative outputs","₦500,000 budget allocation & what success looks like"];
+const T=["Brand & business diagnosis, audience segments","Founder-led brand strategy for Whitney","90-day roadmap: Build, Grow, Scale","Content direction & the flagship Q1 campaign","PR strategy: angles, media, founder visibility","Digital growth funnel & conversion mapping","Q1 KPI framework — vanity vs. business metrics","Month 1 results: reporting & diagnostic analysis","Execution test: three real creative outputs","Budget allocation & what success looks like"];
 const act=D[s.sel][3];
 return {steps:D.map((d,i)=>{const on=s.sel===i;return {num:d[0],name:d[1],parts:d[2],on:on,bg:on?"#2A1420":"#FFF9F4",fg:on?"#F8F0E9":"#2A1420",tag:on?"#F2A99A":"#B0493A",pick:()=>set({sel:i})};}),items:T.map((t,i)=>({n:String(i+1).padStart(2,"0"),t:t,op:act.indexOf(i)>-1?1:0.32}))};
 }
