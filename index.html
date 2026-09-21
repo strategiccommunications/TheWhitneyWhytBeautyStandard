@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Whitney Standard – WhitneyWhytBeauty 90-Day Plan</title>
+<style>html,body{margin:0;height:100%;background:#1c0f16;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:0 0;background:#f7eee8;box-shadow:0 20px 80px #0008}
+iframe{border:0;width:1280px;height:720px;display:block}
+#fs{position:fixed;right:12px;top:12px;z-index:5;font:600 12px system-ui;background:#0006;color:#fff;border:0;border-radius:99px;padding:8px 12px;cursor:pointer;opacity:.6}#fs:hover{opacity:1}</style></head><body>
+<button id="fs" onclick="document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()">Full screen</button>
+<div id="stage"><iframe id="f" title="Deck" allow="autoplay; fullscreen"></iframe></div>
+<script>
+var N=20,f=document.getElementById('f'),st=document.getElementById('stage');
+function pad(n){return (n<10?'0':'')+n}
+function cur(){var m=(f.contentWindow.location.pathname||'').match(/S(\d\d)\.html/);return m?+m[1]:1}
+function go(n){n=Math.max(1,Math.min(N,n));f.src='S'+pad(n)+'.html';history.replaceState(null,'','#'+n)}
+function fit(){var s=Math.min(innerWidth/1280,innerHeight/720);st.style.transform='scale('+s+')';st.style.marginLeft=(-640*s)+'px';st.style.marginTop=(-360*s)+'px';st.style.left='50%';st.style.top='50%';st.style.transformOrigin='0 0'}
+function key(e){if(e.key==='ArrowRight'||e.key==='PageDown')go(cur()+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur()-1);else if(e.key==='Home')go(1);else if(e.key==='End')go(N)}
+f.addEventListener('load',function(){try{f.contentWindow.addEventListener('hashchange',function(){var n=parseInt(location.hash.slice(1));if(n&&n!==cur())go(n)});addEventListener('keydown',key);history.replaceState(null,'','#'+cur())}catch(e){}});
+addEventListener('hashchange',function(){var n=parseInt(location.hash.slice(1));if(n&&n!==cur())go(n)});addEventListener('hashchange',function(){var n=parseInt(location.hash.slice(1));if(n&&n!==cur())go(n)});addEventListener('keydown',key);addEventListener('resize',fit);fit();
+go(parseInt(location.hash.slice(1))||1);
+</script></body></html>

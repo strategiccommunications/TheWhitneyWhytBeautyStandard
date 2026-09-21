@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Content execution</title>
+<script src="js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(fonts/bodoni-moda-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(fonts/bodoni-moda-latin-400-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:400;src:url(fonts/instrument-sans-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(fonts/bodoni-moda-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:500;src:url(fonts/bodoni-moda-latin-500-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:500;src:url(fonts/instrument-sans-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(fonts/bodoni-moda-latin-600-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:600;src:url(fonts/bodoni-moda-latin-600-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:600;src:url(fonts/instrument-sans-latin-600-normal.woff2)}
+</style>
+<style>
+body{margin:0;background:#F8F0E9}
+h1,h2,h3,p{margin:0}
+button{font-family:inherit;cursor:pointer;color:inherit}
+a{text-decoration:none;color:inherit}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.drift{animation:drift 7s ease-in-out infinite}
+.hv{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,background-color .3s,border-color .3s}
+.hv:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(42,20,32,.45)}
+.hr{transition:background-color .25s,padding .3s}
+.hr:hover{background-color:rgba(184,90,70,.10)}
+.nav{transition:background-color .25s,transform .25s}
+.nav:hover{background-color:rgba(184,90,70,.22);transform:scale(1.08)}
+.pill{transition:background-color .25s,color .25s,transform .25s}
+.pill:hover{transform:translateY(-2px)}
+.bar{transform-origin:left center;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){.rise,.drift,.bar{animation:none}*{transition:none!important}}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#F8F0E9;color:#2A1420;font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.45">
+
+<div style="position:absolute;inset:0;padding:0 72px 0;box-sizing:border-box;z-index:1">
+<sc-if value="{{v0}}" hint-placeholder-val="{{true}}"><div style="padding-top:44px"><div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px"><div><div style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#B0493A;line-height:1.2">Part four &middot; Content execution</div><h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:40px;line-height:1.08;letter-spacing:-0.01em;max-width:760px;margin-top:10px;color:#2A1420">16 content concepts for the <em style='color:#B0493A;font-weight:400'>first 30 days</em></h1></div>
+<div style="display:flex;gap:8px;padding-bottom:4px" role="group" aria-label="Filter by type">
+<sc-for list="{{chips}}" as="c" hint-placeholder-count="4"><button class="pill" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="padding:9px 16px;border-radius:999px;border:1px solid #2A1420;font-size:14px;font-weight:600;background:{{c.bg}};color:{{c.fg}}">{{c.l}}</button></sc-for></div></div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="16">
+<div class="hv" style="height:120px;box-sizing:border-box;padding:16px 18px;border-radius:8px;border:1px solid rgba(42,20,32,0.16);background:{{c.bg}};color:{{c.fg}};opacity:{{c.op}};display:flex;flex-direction:column;justify-content:space-between">
+<div style="font-size:11.5px;font-weight:600;letter-spacing:.18em;color:{{c.tag}}">{{c.cat}}</div>
+<div style="font-family:'Bodoni Moda',serif;font-size:19px;line-height:1.2">{{c.t}}</div></div></sc-for></div></div></sc-if>
+<sc-if value="{{v1}}" hint-placeholder-val="{{false}}"><div style="padding-top:52px"><div style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#B0493A;line-height:1.2">Part four &middot; Content execution</div><h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:42px;line-height:1.08;letter-spacing:-0.01em;max-width:1100px;margin-top:14px;color:#2A1420">Hook &rarr; Idea &rarr; Caption direction &rarr; <em style='color:#B0493A;font-weight:400'>CTA</em></h1><div style="display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;margin-top:26px;padding:0 6px 10px;border-bottom:1.5px solid #2A1420;font-size:12px;letter-spacing:.2em;font-weight:600;color:#B0493A;text-transform:uppercase"><div>Hook</div><div>Content idea</div><div>Caption direction</div><div>CTA</div></div><div class="hr rise" style="animation-delay:0.0s;display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;padding:16px 6px;border-bottom:1px solid rgba(42,20,32,0.16);align-items:center"><div style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:22px;line-height:1.2">&ldquo;I almost didn&rsquo;t open this business.&rdquo;</div><div style="font-weight:600;font-size:16.5px">Founder story reel</div><div style="font-size:15.5px;line-height:1.4;color:#6A5360">Short, honest voiceover on the fear before starting; end on why it was worth it</div><div style="font-size:13.5px;font-weight:600;background:#2A1420;color:#F8F0E9;padding:8px 12px;border-radius:999px;text-align:center;line-height:1.25">Follow the journey</div></div><div class="hr rise" style="animation-delay:0.1s;display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;padding:16px 6px;border-bottom:1px solid rgba(42,20,32,0.16);align-items:center"><div style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:22px;line-height:1.2">&ldquo;Your piercing isn&rsquo;t healing wrong &mdash; you&rsquo;re just doing this.&rdquo;</div><div style="font-weight:600;font-size:16.5px">Aftercare myth-bust</div><div style="font-size:15.5px;line-height:1.4;color:#6A5360">3 quick corrections to common aftercare mistakes, in Whitney&rsquo;s voice</div><div style="font-size:13.5px;font-weight:600;background:#2A1420;color:#F8F0E9;padding:8px 12px;border-radius:999px;text-align:center;line-height:1.25">Save for later</div></div><div class="hr rise" style="animation-delay:0.2s;display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;padding:16px 6px;border-bottom:1px solid rgba(42,20,32,0.16);align-items:center"><div style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:22px;line-height:1.2">&ldquo;Watch her face when she sees the result.&rdquo;</div><div style="font-weight:600;font-size:16.5px">Client transformation reveal</div><div style="font-size:15.5px;line-height:1.4;color:#6A5360">Real client reaction, no filters, ending on genuine words from her</div><div style="font-size:13.5px;font-weight:600;background:#2A1420;color:#F8F0E9;padding:8px 12px;border-radius:999px;text-align:center;line-height:1.25">Book your reveal</div></div><div class="hr rise" style="animation-delay:0.30000000000000004s;display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;padding:16px 6px;border-bottom:1px solid rgba(42,20,32,0.16);align-items:center"><div style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:22px;line-height:1.2">&ldquo;This is what a real Tuesday looks like.&rdquo;</div><div style="font-weight:600;font-size:16.5px">Behind-the-scenes day-in-the-life</div><div style="font-size:15.5px;line-height:1.4;color:#6A5360">Unpolished, fast-cut look at prep, clients, small wins</div><div style="font-size:13.5px;font-weight:600;background:#2A1420;color:#F8F0E9;padding:8px 12px;border-radius:999px;text-align:center;line-height:1.25">Come see for yourself</div></div><div class="hr rise" style="animation-delay:0.4s;display:grid;grid-template-columns:1.25fr 1fr 1.35fr 150px;gap:26px;padding:16px 6px;border-bottom:1px solid rgba(42,20,32,0.16);align-items:center"><div style="font-family:'Bodoni Moda',serif;font-style:italic;font-size:22px;line-height:1.2">&ldquo;3 slots left before the weekend.&rdquo;</div><div style="font-weight:600;font-size:16.5px">Limited-availability booking push</div><div style="font-size:15.5px;line-height:1.4;color:#6A5360">Direct, friendly urgency tied to a specific in-demand service</div><div style="font-size:13.5px;font-weight:600;background:#2A1420;color:#F8F0E9;padding:8px 12px;border-radius:999px;text-align:center;line-height:1.25">Book now, link in bio</div></div></div></sc-if>
+
+</div>
+<div style="position:absolute;left:72px;right:72px;bottom:22px;display:flex;align-items:center;justify-content:space-between;z-index:2">
+<div style="font-size:13px;letter-spacing:0.08em;color:#6A5360">WhitneyWhytBeauty &middot; 90-Day Plan</div>
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:13px;letter-spacing:0.12em;color:#6A5360;margin-right:6px">11 / 20</span><a class="nav" href="S10.html" aria-label="Previous slide" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(42,20,32,0.16);display:flex;align-items:center;justify-content:center;color:#2A1420"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3 5 9l6 6"/></svg></a><a class="nav" href="S12.html" aria-label="Next slide" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(42,20,32,0.16);display:flex;align-items:center;justify-content:center;color:#2A1420"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3l6 6-6 6"/></svg></a></div>
+</div>
+<div style="position:absolute;left:0;bottom:0;height:4px;width:55.00%;background:#B0493A;z-index:3"></div>
+<div style="position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:4px;padding:4px;border:1px solid rgba(42,20,32,0.16);border-radius:999px;background:#FFF9F4;z-index:4" role="group" aria-label="Slide views"><sc-for list="{{vtabs}}" as="vt" hint-placeholder-count="3"><button class="pill" onClick="{{vt.pick}}" aria-pressed="{{vt.on}}" style="padding:9px 18px;border-radius:999px;border:none;font-size:13px;font-weight:600;letter-spacing:.05em;min-height:36px;background:{{vt.bg}};color:{{vt.fg}}">{{vt.l}}</button></sc-for></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+constructor(...a) { super(...a); this.state = Object.assign({view:0},{f:"All"},{}); }
+renderVals() {
+const s = this.state; const set = (o) => this.setState(o);
+const P0=(()=>{const C=[["FOUNDER","Whitney's morning routine before opening"],["FOUNDER","Why I chose this location"],["EDUCATIONAL","How to prep skin before a facial"],["EDUCATIONAL","Piercing aftercare, explained simply"],["SERVICE","This week's signature treatment"],["PRODUCT","New arrivals on Piercings.ng"],["TRANSFORMATION","Before/after: bridal skin prep"],["CUSTOMER EXP.","What happens when you arrive"],["SOCIAL PROOF","Reading our reviews out loud"],["LIFESTYLE","A self-care Sunday, our way"],["BEHIND-THE-SCENES","Setting up before opening hours"],["COMMUNITY","Client of the week shout-out"],["PROMOTIONAL","First-visit offer, limited seats"],["FOUNDER","Get ready with Whitney, event edition"],["EDUCATIONAL","Myths about piercing healing time"],["CONVERSION","Book this weekend, 3 slots left"]];
+const F=["All","Founder","Educational","Everything else"];
+const match=(c)=>s.f==="All"||(s.f==="Founder"&&c[0]==="FOUNDER")||(s.f==="Educational"&&c[0]==="EDUCATIONAL")||(s.f==="Everything else"&&c[0]!=="FOUNDER"&&c[0]!=="EDUCATIONAL");
+return {cards:C.map(c=>{const m=match(c);const fd=c[0]==="FOUNDER";return {cat:c[0],t:c[1],op:m?1:0.22,bg:fd?"#2A1420":"#FFF9F4",fg:fd?"#F8F0E9":"#2A1420",tag:fd?"#F2A99A":"#B0493A"};}),chips:F.map(f=>{const on=s.f===f;return {l:f,on:on,bg:on?"#2A1420":"transparent",fg:on?"#F8F0E9":"#2A1420",pick:()=>set({f:f})};})};})();
+const P1=(()=>{return {};})();
+return Object.assign({},P0,P1,{v0:s.view===0,v1:s.view===1,vtabs:[{l:"16 content concepts",on:s.view===0,bg:s.view===0?"#2A1420":"transparent",fg:s.view===0?"#F8F0E9":"#2A1420",pick:()=>set({view:0})},{l:"Hook to CTA",on:s.view===1,bg:s.view===1?"#2A1420":"transparent",fg:s.view===1?"#F8F0E9":"#2A1420",pick:()=>set({view:1})}]});
+}
+}
+</script>
+</body>
+</html>

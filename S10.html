@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>90-day roadmap</title>
+<script src="js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:400;src:url(fonts/bodoni-moda-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:400;src:url(fonts/bodoni-moda-latin-400-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:400;src:url(fonts/instrument-sans-latin-400-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:500;src:url(fonts/bodoni-moda-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:500;src:url(fonts/bodoni-moda-latin-500-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:500;src:url(fonts/instrument-sans-latin-500-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600;src:url(fonts/bodoni-moda-latin-600-normal.woff2)}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:600;src:url(fonts/bodoni-moda-latin-600-italic.woff2)}
+@font-face{font-family:'Instrument Sans';font-weight:600;src:url(fonts/instrument-sans-latin-600-normal.woff2)}
+</style>
+<style>
+body{margin:0;background:#F8F0E9}
+h1,h2,h3,p{margin:0}
+button{font-family:inherit;cursor:pointer;color:inherit}
+a{text-decoration:none;color:inherit}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.drift{animation:drift 7s ease-in-out infinite}
+.hv{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,background-color .3s,border-color .3s}
+.hv:hover{transform:translateY(-6px);box-shadow:0 22px 40px -22px rgba(42,20,32,.45)}
+.hr{transition:background-color .25s,padding .3s}
+.hr:hover{background-color:rgba(184,90,70,.10)}
+.nav{transition:background-color .25s,transform .25s}
+.nav:hover{background-color:rgba(184,90,70,.22);transform:scale(1.08)}
+.pill{transition:background-color .25s,color .25s,transform .25s}
+.pill:hover{transform:translateY(-2px)}
+.bar{transform-origin:left center;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){.rise,.drift,.bar{animation:none}*{transition:none!important}}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#F8F0E9;color:#2A1420;font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.45">
+
+<div style="position:absolute;inset:0;padding:46px 72px 0;box-sizing:border-box;z-index:1">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#B0493A;line-height:1.2">Part three &middot; 90-day roadmap</div><h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:34px;line-height:1.08;letter-spacing:-0.01em;max-width:1136px;margin-top:10px;color:#2A1420">Build <span style='color:#6A5360'>(Days 1&ndash;30)</span> &rarr; Grow <span style='color:#6A5360'>(31&ndash;60)</span> &rarr; <em style='color:#B0493A;font-weight:400'>Scale</em> <span style='color:#6A5360'>(61&ndash;90)</span></h1><div style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;margin-top:22px;align-items:end"><div></div><div style="padding:12px 14px;border-radius:8px 8px 0 0;background:#E9B5A6;color:#2A1420"><div style="font-size:11px;letter-spacing:.2em;font-weight:600">MONTH 1</div><div style="font-family:'Bodoni Moda',serif;font-size:24px">Build <span style="font-size:14px;font-family:'Instrument Sans'">Days 1–30</span></div></div><div style="padding:12px 14px;border-radius:8px 8px 0 0;background:#C9705F;color:#fff"><div style="font-size:11px;letter-spacing:.2em;font-weight:600">MONTH 2</div><div style="font-family:'Bodoni Moda',serif;font-size:24px">Grow <span style="font-size:14px;font-family:'Instrument Sans'">31–60</span></div></div><div style="padding:12px 14px;border-radius:8px 8px 0 0;background:#2A1420;color:#F8F0E9"><div style="font-size:11px;letter-spacing:.2em;font-weight:600;color:#F2A99A">MONTH 3</div><div style="font-family:'Bodoni Moda',serif;font-size:24px">Scale <span style="font-size:14px;font-family:'Instrument Sans'">61–90</span></div></div><div style="padding:12px 14px;font-size:11px;letter-spacing:.2em;font-weight:600;color:#B0493A">KPI</div></div><div class="hr" style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,20,32,0.16);font-size:14.5px;line-height:1.35;align-items:start"><div style="font-family:'Bodoni Moda',serif;font-size:18px;line-height:1.15;padding-left:2px">Brand & founder</div><div>Lock positioning, tone, visual guide</div><div>Podcasts, blog features, live Q&amp;As</div><div>Scale top founder formats; pursue Q2 speaking slot</div><div style="color:#B0493A;font-weight:500">Guide signed off &rarr; 3+ features &rarr; falling cost/booking</div></div><div class="hr" style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,20,32,0.16);font-size:14.5px;line-height:1.35;align-items:start"><div style="font-family:'Bodoni Moda',serif;font-size:18px;line-height:1.15;padding-left:2px">Content</div><div>90-day calendar; shoot content bank</div><div>Weekly &ldquo;Your Next Look&rdquo; content series</div><div>Double down on best-performing formats</div><div style="color:#B0493A;font-weight:500">30 days queued &rarr; engagement rate rising</div></div><div class="hr" style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,20,32,0.16);font-size:14.5px;line-height:1.35;align-items:start"><div style="font-family:'Bodoni Moda',serif;font-size:18px;line-height:1.15;padding-left:2px">PR</div><div>Press kit, bio, pitch list built</div><div>Pitch story angles; secure first placements</div><div>PR amplification; op-ed placed</div><div style="color:#B0493A;font-weight:500">Press kit live &rarr; 2+ placements &rarr; 1 op-ed live</div></div><div class="hr" style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,20,32,0.16);font-size:14.5px;line-height:1.35;align-items:start"><div style="font-family:'Bodoni Moda',serif;font-size:18px;line-height:1.15;padding-left:2px">Digital &amp; paid</div><div>Tracking setup; booking-ready profile</div><div>Retargeting + lookalike ads live</div><div>Retarget past clients; referral ads</div><div style="color:#B0493A;font-weight:500">Dashboard live &rarr; cost per lead tracked</div></div><div class="hr" style="display:grid;grid-template-columns:150px repeat(3,minmax(0,1fr)) 1.05fr;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,20,32,0.16);font-size:14.5px;line-height:1.35;align-items:start"><div style="font-family:'Bodoni Moda',serif;font-size:18px;line-height:1.15;padding-left:2px">Retention &amp; commercial</div><div>Foundation only &mdash; no push yet</div><div>Creator collabs; UGC hashtag launch</div><div>Rebooking prompts, referral programme, partnerships</div><div style="color:#B0493A;font-weight:500">Qualified enquiries up &rarr; referral bookings tracked</div></div>
+</div>
+<div style="position:absolute;left:72px;right:72px;bottom:22px;display:flex;align-items:center;justify-content:space-between;z-index:2">
+<div style="font-size:13px;letter-spacing:0.08em;color:#6A5360">WhitneyWhytBeauty &middot; 90-Day Plan</div>
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:13px;letter-spacing:0.12em;color:#6A5360;margin-right:6px">10 / 20</span><a class="nav" href="S09.html" aria-label="Previous slide" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(42,20,32,0.16);display:flex;align-items:center;justify-content:center;color:#2A1420"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3 5 9l6 6"/></svg></a><a class="nav" href="S11.html" aria-label="Next slide" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(42,20,32,0.16);display:flex;align-items:center;justify-content:center;color:#2A1420"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3l6 6-6 6"/></svg></a></div>
+</div>
+<div style="position:absolute;left:0;bottom:0;height:4px;width:50.00%;background:#B0493A;z-index:3"></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+constructor(...a) { super(...a); this.state = {}; }
+renderVals() {
+const s = this.state; const set = (o) => this.setState(o);
+return {};
+}
+}
+</script>
+</body>
+</html>
